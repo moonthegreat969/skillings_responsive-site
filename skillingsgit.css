@@ -1,0 +1,1894 @@
+*,*::after,*::before{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+    /*border: 1px solid red;*/
+}
+
+:root{
+    font-size: 16px;
+	--general-blue: rgb(1, 1, 97);
+	--general-brown: rgb(194, 150, 55);
+}
+
+body{
+    font-size: 100%;
+}
+
+nav{
+    width:100%;
+    background-color: var(--general-blue);
+    padding: 2rem 10rem;
+    display:flex;
+    align-items: center;
+}
+
+.navlogo{
+    transform: translate(0 , -15%);
+    display:flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.navlogo img{
+    width:40px;
+    height:40px;
+    /*transform: translate(0, 25%);*/
+    margin-left: -10px;
+}
+
+nav h3{
+    display: inline-block;
+    font-family: cursive;
+    font-style:italic;
+    font-weight:  bold;
+    color:yellow;
+    font-size: 1.3rem;
+    /*transform: translateY(-10%)*/
+}
+
+nav h3:last-of-type{
+    color: white;
+}
+
+.navhambg{
+    display:none;
+}
+
+.navleft{
+    display:block;
+    position: relative;
+    visibility: visible;
+    float:right;
+    justify-self: flex-end;
+    margin-left:auto;
+}
+
+.sign-in{
+    color:white;
+    font-family: verdana;
+    font-size: 1.1rem;
+}
+.sign-in:hover{
+    color:yellow;
+}
+.register-free{
+    color: yellow;
+    font-family: verdana;
+    font-size: 1.1rem;
+    margin-left: 1rem;
+    padding:0;
+}
+.register-free:hover{
+    border-bottom: 2px solid white;
+    padding-bottom: 4px;
+    color:white;
+}
+.showcase{
+    width:100%;
+    display:flex;
+    justify-content: space-evenly;
+    padding: 4rem 10rem 2rem 10rem;
+    background-color: var(--general-blue);
+    overflow:visible;
+}
+
+.show-words{
+    width: 40%;
+    flex-grow:1;
+    padding: 3rem 0;
+}
+
+.show-words h3{
+    font-family: sans-serif;
+    font-weight:bold;
+    color:white;
+    font-size: 1.5rem;
+    padding: 0.4rem 0;
+}
+
+.show-words p{
+	line-height: 1.2rem;
+	color: white;
+	font-size: 0.9rem;
+	font-family:Verdana;
+    padding:1.5rem 0;
+}
+
+.show-words .register-free-btn{
+    width:50%;
+	border-radius: 7px;
+	background-color: var(--general-brown);
+	color: black;
+	border: 0;
+	font-size: 0.95rem;
+	font-family:sans-serif;
+	font-weight: 600;
+    padding: 0.8rem 0.5rem;
+}
+
+
+.how-it-works{
+    color: var(--general-brown);
+	font-size: 0.9rem;
+	font-family: sans-serif;
+	font-weight: bold;
+	border-bottom: 2px solid white;
+	padding-bottom:8px;
+    margin-left: 1rem;
+}
+.showimg{
+    position: relative;
+    width: 60%;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+
+/* You need to know the CSS bug where:
+* if x-overflow is set to hidden, overflow-y default sets to auto
+* this couldn't work for my code, therefore;
+*i used the after to create an element to the right of the showimg div,
+*which covers every overflowing [portion and 
+*solved the bug man!
+*/
+
+
+.showimg::after{
+    content: '';
+    height:100%;
+    width:10rem;
+    position:absolute;
+    right:0;
+    background-color: var(--general-blue);
+    margin-right:-10rem;
+}
+
+.inner-showimg{    
+	display: block;
+	height: 350px;
+	width:350px;
+	border: 1px solid gray;
+	border-radius: 20%;
+    transform : rotateZ(45deg);
+	overflow: hidden;
+}
+
+.inner-showimg::before{
+	content: '';
+	position:absolute;
+	width: 200%;
+	height: 200%;
+	margin-top: -40%;
+	margin-left: -10%;
+	/*
+	top: -50%;
+	left: -50%;
+	*/
+	background: url(https://github.com/moonthegreat969/skillings_responsive-site/blob/gh-pages/digitalskillspic.jpeg?raw=true);
+	transform: rotateZ(-45deg);
+	background-position: top center;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+
+.explore-title{
+    width:100%;
+    text-align: center;
+    background-color: var(--general-blue);
+    padding: 3rem 10rem 1rem 10rem;
+    display:flex;
+    flex-wrap:wrap;
+}
+
+.explore-title h2{
+    width:100%;
+    color: white;
+	font-size: 1.5rem;
+	font-family:sans-serif;
+	font-weight: bold;
+    padding: 1rem 0;
+}
+
+.explore-cards{
+    width:100%;
+    background-color: var(--general-blue);
+    padding: 1rem 10rem;
+}
+
+.inner-explore-cards{
+    width: 100%;
+    display:flex;
+    overflow-x:hidden;
+}
+
+.explore-card{
+	width: 230px;
+    height: 160px;
+	border: 1px solid white;
+	border-radius: 8%;
+	display: flex;
+    justify-content: center;
+    align-items:center;
+    margin-right: 2rem;
+    flex-grow:0;
+    flex-shrink: 0;
+}
+
+.explore-graphdesg{
+    background-image: url(https://github.com/moonthegreat969/skillings_responsive-site/blob/gh-pages/graphdesgnill3.jpg?raw=true);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.explore-photo{
+    background-image: url(https://github.com/moonthegreat969/skillings_responsive-site/blob/gh-pages/photoill.jpg?raw=true);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+.explore-copywrtg{
+    background-image: url(https://github.com/moonthegreat969/skillings_responsive-site/blob/gh-pages/copywritingill.jpg?raw=true);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.explore-webdev{
+    background-image: url(https://github.com/moonthegreat969/skillings_responsive-site/blob/gh-pages/webdevill.jpg?raw=true);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.explore-cloudcomp{
+    background-image: url(https://github.com/moonthegreat969/skillings_responsive-site/blob/gh-pages/cloudcompill.jpg?raw=true);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.explore-uiuxdesg{
+    background-image: url(https://github.com/moonthegreat969/skillings_responsive-site/blob/gh-pages/uiuxdesgnill.png?raw=true);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+/* Because the centred texts here will be in color black;
+*endevaour to make the background-images lighter;
+*Especially if they are illustrations
+*/
+.explore-card p{
+    align-self: center;
+	font-size: 0.9rem;
+	font-family: verdana;
+	font-weight: bold;
+	color: black;
+}
+
+.browse-courses{
+    width: 100%;
+    text-align: center;
+    padding: 0.4rem 10rem 0.6rem 10rem;
+    background-color: var(--general-blue);
+}
+
+.browse-courses button{
+	background-color: var(--general-brown);
+	color: black;
+	font-family:sans-serif;
+	font-size: 0.9rem;
+	font-weight: bold;
+	border:0;
+	border-radius: 10px;
+    padding: 0.8rem 1.5rem;
+}
+
+.aboutorg{
+	width: 100%;
+	background-color: white;
+	display:flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	padding: 4rem 10rem 6rem 10rem;
+}
+
+.aboutorg-1{
+	width: 40%;
+    padding: 2rem 0 1.5rem 0;
+    margin-bottom: 4rem;
+}
+
+.aboutorg-right{
+    padding-left:1.5rem;
+}
+
+.aboutorg-left{
+    padding-right:1.5rem;
+}
+
+.aboutorg-1 h2{
+	position: relative;
+	display: inline-block;
+	width: 100%;
+    color: var(--general-blue);
+	font-size: 1.3rem;
+	font-weight: bold;
+	font-family: sans-serif;
+    padding: 0.3rem 0;
+}
+
+.aboutorg-1 .golden-line{
+    display:inline-block;
+    position: relative;
+    width:45%;
+    height:8px;
+    background-color: var(--general-brown);
+    margin: 0.8rem 0  0 0;
+}
+.aboutorg-1  p{
+    position: relative;
+	display: inline-block;
+	width: 100%;
+    color: var(--general-blue);
+	font-size: 0.9rem;
+	font-family: verdana;
+	line-height: 1.2rem;
+    padding: 2rem 4rem 2rem 0;
+}
+
+.aboutorg-1 span{
+    position: relative;
+    display: inline-block;
+    width: max-content;
+    color: var(--general-blue);
+	font-size: 0.85rem;
+	font-weight: bold;
+	font-family: verdana;
+	align-self:flex-end;
+}
+
+.aboutorg-1 span:hover{
+    border-bottom: 2px solid var(--general-brown);
+	padding-bottom: 0.3rem;
+}
+.aboutorg-2{
+    position: relative;
+    width:60%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 4rem;
+}
+
+
+.inner-aboutorg-2{
+    position: absolute;
+    bottom:0;
+	align-self: flex-end;
+    height: 250px;
+	width: 310px;
+    transform: rotateZ(-30deg) ;
+	border-radius: 20% 10% 20% 10%  / 40% 30% 40% 30%;
+	overflow: hidden;
+
+}
+
+.inner-aboutorg-2::before{
+	content: '';
+	position:absolute;
+	width: 150%;
+	height: 150%;
+	margin-top: -20%;
+	margin-left: -20%;
+	/*
+	top: -50%;
+	left: -50%;
+	*/
+	z-index: -1;
+	transform: rotateZ(30deg);
+    background-position: center center;
+	background-size: contain;
+	background-repeat: no-repeat;
+    background-repeat: repeat;
+}
+
+.what-we-deliver::before{
+    background-image: url(https://github.com/moonthegreat969/skillings_responsive-site/blob/gh-pages/digitalskillsimage.jpeg?raw=true);
+}
+
+.our-workspace::before{
+    background-image: url(https://github.com/moonthegreat969/skillings_responsive-site/blob/gh-pages/boyonlapee.jpg?raw=true); 
+}
+.our-instructors::before{
+    background-image: url(https://github.com/moonthegreat969/skillings_responsive-site/blob/gh-pages/teachingill.jpg?raw=true);
+}
+
+.our-community{
+    width:100%;
+    padding: 1.5rem 10rem 0.5rem 10rem;
+    background-color: var(--general-blue);
+}
+
+.inner-our-comm{
+    width:100%;
+}
+
+.comm-header{
+    width: 100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.line{
+    align-self: center;
+    width:100%;
+    flex-grow:1;
+    height: 2px;
+    background-color: white;
+}
+
+.comm-header span{
+    width: max-content;
+    align-self: center;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+    font-family: sans-serif;
+    padding: 0 1rem;
+}
+
+.comm-content{
+    width:100%;
+    text-align:center;
+    display:flex;
+    justify-content: flex-start;
+}
+
+.comm-content .comm-content-item{
+    width:25%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.comm-content-item span{
+    display: inline-block;
+    width:100%;
+    color: white;
+	font-size: 1.5rem;
+	font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding: 1.2rem 0 0.8rem 0;;
+}
+
+.comm-content-item p{
+    display: inline-block;
+    width:100%;
+	color:white;
+	font-size: 0.7rem;
+	font-family: sans-serif;
+	align-self: center;
+    padding: 0.8rem 0;
+}
+
+.our-stories{
+    width:100%;
+    padding: 1.5rem 10rem 3rem 10rem;
+    background-color: var(--general-blue);
+}
+
+.inner-our-stories{
+    width:100%;
+}
+
+.our-stories-header{
+    width: 100%;
+    padding: 0.5rem 0;
+}
+
+.our-stories-header span{
+	color: white;
+	font-family: sans-serif;
+	font-weight: bold;
+	font-size: 1.3rem;
+}
+
+.our-stories-content{
+    width:100%;
+    max-height: 100%;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: white;
+    border-radius: 20px;
+    padding: 1rem 2rem 1rem 5rem;
+}
+
+.our-stories-img{
+    width:25%;
+    margin: 1rem 0;
+    display:flex;
+    justify-content: center;    
+    background-image: url('https://github.com/moonthegreat969/skillings_responsive-site/blob/gh-pages/manonlapee3.jpg?raw=true');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center ;
+    border-radius:15px;
+}
+.our-stories-img img{
+    display:none;
+}
+.our-stories-right{
+    width:75%;
+    border: 1px solid white;
+    padding: 0.8rem 3rem 0.8rem 1.5rem;
+    color:var(--general-blue);
+}
+
+.our-stories-right p{
+    width:100%;
+	font-size:0.9rem;
+	font-weight: 500;
+	font-family: sans-serif;
+    padding: 0 1rem 0.6rem 0;
+}
+
+.our-stories-right h2{
+    font-size: 1.3rem;
+	font-weight:bold;
+	font-family:sans-serif;
+    padding: 1.5rem 0 0.5rem 0;
+}
+
+.our-stories-right h4{
+    font-size: 0.85rem;
+	font-weight:bold;
+	font-family: sans-serif;
+    padding: 0.5rem 0;
+}
+
+.our-stories-pagination{
+    width:100%;
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+}
+
+.our-stories-pagination span{
+    margin-left: 1rem;
+}
+
+.pagechangeicon{
+	height: 40px;
+	width: 40px;
+	border-radius: 50%;
+	background-color: rgb(194, 150, 55);
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.5rem;
+	font-weight: bold;
+    padding: 0.5rem;
+}
+
+.page-change-roll{
+    flex-grow:0;
+    flex-shrink:0;
+	align-self: center;
+	height: 10px;
+	width: 10px;
+	border-radius: 50%;
+	background-color: inherit;
+	border: 2px solid white;
+}
+
+.current-page{
+	background-color: var(--general-brown);
+}
+
+.be-in-charge{
+    width: 100%;
+    background-color: white;
+    padding: 2rem 10rem;
+}
+
+.inner-be-in-charge{
+    width:100%;
+    position: relative;
+}
+
+.inner-be-in-charge h2{
+    color: var(--general-blue);
+	font-family: sans-serif;
+	font-size: 1.3rem;
+	font-weight: bold;
+    padding-bottom: 2rem;
+}
+
+.inner-be-in-charge ul{
+	width: 100%;
+	padding-left: 15px;
+	display:flex;
+	flex-direction: column;
+}
+
+.inner-be-in-charge ul li{
+    list-style-type: disc;
+	list-style-position: inside;
+	width: 100%;
+	height: 25%;
+    color: var(--general-brown);
+	font-size: 0.8rem;
+	font-family: verdana;
+	padding: 0.8rem 0 0.8rem 20px;
+}
+
+.inner-be-in-charge ul li span{
+    color: var(--general-blue);
+}
+
+.inner-be-in-charge .logo-in-circle-1{
+	position: absolute;
+	height: 100px;
+	width: 100px;
+	border-radius: 50%;
+	background-color: var(--general-blue);
+	right: 0;
+	bottom:0;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	transform: rotateZ(-20deg);
+    margin-bottom: -20px;
+}
+
+.inner-be-in-charge .logo-in-circle-1 h3{
+    display: inline-block;
+    font-family: cursive;
+    font-style:italic;
+    font-weight:  bold;
+    color:yellow;
+    font-size: 1.3rem;
+}
+
+.inner-be-in-charge .logo-in-circle-1 h3:last-of-type{
+    color: white;
+}
+
+.register-free-2{
+    width: 100%;
+    background-color: white;
+    padding: 1rem 10rem;
+}
+
+.inner-register-free-2{
+    width:100%;
+    text-align: center;
+}
+
+.inner-register-free-2 button{
+	background-color: var(--general-brown);
+	border:0;
+	border-radius: 7px;
+	background-color: var(--general-brown);
+	color: black;
+	font-size: 0.95rem;
+	font-family: sans-serif;
+	font-weight: 600;
+	padding: 1rem 1.5rem;
+}
+
+.partners{
+    width: 100%;
+    background-color: var(--general-blue);
+    padding: 1rem 10rem;
+}
+
+.inner-partners{
+    width:100%;
+}
+
+.partners-header{
+    width: 100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.line{
+    align-self: center;
+    width:100%;
+    flex-grow:1;
+    height: 2px;
+    background-color: white;
+}
+
+.partners-header span{
+    width: max-content;
+    align-self: center;
+    color: white;
+    font-size: 1.3rem;
+    font-weight: bold;
+    font-family: sans-serif;
+    padding: 0 1rem;
+}
+
+.partners-content{
+    width: 100%;
+    margin: 3rem 0 4rem 0;
+    display:flex;
+    flex-direction: row;
+}
+
+.partners-logo{
+    width: 100%;
+    display:flex;
+    justify-content: center;
+}
+
+.partners-logo img{
+    width: 70px;
+    height: 70px;
+}
+
+footer{
+    width: 100%;
+    background-color: var(--general-brown);
+    padding: 1rem 10rem;
+}
+
+.inner-footer{
+    width:100%;
+}
+
+.footer-first{
+    width:100%;
+    display:flex;
+    flex-direction: row;
+}
+
+.footer-left{
+    width:30%;
+    display:flex;
+    flex-direction: column;
+    margin-right: 4%;
+}
+
+.footer-logo{
+    width:100%;
+    height: 50%;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    padding: 2rem 0;
+}
+
+.footer-logo .logo-in-circle-2{
+	height: 100px;
+	width: 100px;
+	border-radius: 50%;
+	background-color: var(--general-blue);
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	transform: rotateZ(-20deg);
+    margin-bottom: -20px;
+}
+
+.footer-logo .logo-in-circle-2 h3{
+    display: inline-block;
+    font-family: cursive;
+    font-style:italic;
+    font-weight:  bold;
+    color:yellow;
+    font-size: 1.3rem;
+}
+
+.footer-logo .logo-in-circle-2  h3:last-of-type{
+    color: white;
+}
+
+.footer-about{
+    width: 100%;
+    height: 50%;
+    padding: 1rem 0;
+}
+.footer-about span{
+    color: black;
+	font-family: sans-serif;
+	font-size: 0.9rem;
+	line-height: 1.3rem;
+	font-weight: bold;
+}
+
+
+.footer-right{
+    width:70%;
+    padding: 2rem 0;
+}
+
+
+.footer-right .footer-text-links{
+	width:100%;
+	display:flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.footer-text-links > div{
+    padding: 0.75rem 0;
+}
+
+.footer-text-links > div span{
+	color: black;
+	font-size: 0.9rem;
+	font-family: sans-serif;
+	font-weight:bold;
+}
+
+/*Here, the text links are three per row;
+*and i divided them using the nth-of-type pseudo class where;
+*the first takes 40% of width;
+*the second takes 30% of width;
+*the third takes 30% of thw width;
+*this is done just because i noticed text-links in the first column are quite longer;
+* in next responsive breakpoints; i will make them to be two per row
+*and one later on
+*/
+
+.footer-text-links > div:nth-of-type(3n-2){
+	width: 40%;
+}
+
+.footer-text-links > div:nth-of-type(3n-1){
+	width: 30%;
+}
+
+.footer-text-links > div:nth-of-type(3n){
+	width: 30%;
+}
+
+.footer-img-links{
+    width: 100%;
+    display:flex;
+    justify-content: center;
+    padding: 2.5rem 0 1rem 0;
+}
+
+.footer-img-links-item{
+	align-self: flex-start;
+	height:30px;
+	width:30px;
+	border-radius: 8px;
+	background-color: var(--general-blue);
+	margin-left: 3%;
+	display:flex;
+	justify-content: center;
+}
+
+.footer-img-links-item img{
+	align-self:center;
+	height:80%;
+	width: 80%;
+}
+
+.footer-img-links-item:last-of-type img{
+	height: 40%;
+	width:50%;
+}
+
+.footer-copyright{
+    width: 100%;
+    display:flex;
+    justify-content: flex-end;
+    padding: 1rem 0;
+}
+
+.footer-copyright span{
+	height: 100%;
+	display:flex;
+	justify-content: flex-end;
+	align-self: flex-start;
+	color: black;
+	font-size: 0.9rem;
+	font-family: sans-serif;
+	font-weight:bold;
+}
+
+
+@media (max-width:1000px){
+    nav{
+        width:100%;
+        background-color: var(--general-blue);
+        padding: 2rem 5rem;
+        display:flex;
+        align-items: center;
+    }
+    .showcase{
+        width:100%;
+        display:flex;
+        justify-content: space-evenly;
+        padding: 4rem 5rem;
+        background-color: var(--general-blue);
+        overflow:visible;
+    }
+    .showimg::after{
+        content: '';
+        height:100%;
+        width:5rem;
+        position:absolute;
+        right:0;
+        background-color: var(--general-blue);
+        margin-right:-5rem;
+    }
+    .explore-title{
+        width:100%;
+        text-align: center;
+        background-color: var(--general-blue);
+        padding: 3rem 5rem 1rem 5rem;
+        display:flex;
+        flex-wrap:wrap;
+    }
+    .explore-cards{
+        width:100%;
+        background-color: var(--general-blue);
+        padding: 1rem 5rem;
+    }
+    .browse-courses{
+        width: 100%;
+        text-align: center;
+        padding: 0.4rem 5rem 0.6rem 5rem;
+        background-color: var(--general-blue);
+    }
+    
+    .aboutorg{
+        width: 100%;
+        background-color: white;
+        display:flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 4rem 5rem 6rem 5rem;
+    }
+    
+    .our-community{
+        width:100%;
+        padding: 1.5rem 5rem 0.5rem 5rem;
+        background-color: var(--general-blue);
+    }
+    
+    .our-stories{
+        width:100%;
+        padding: 1.5rem 5rem 3rem 5rem;
+        background-color: var(--general-blue);
+    }
+    
+    .be-in-charge{
+        width: 100%;
+        background-color: white;
+        padding: 2rem 5rem;
+    }
+    
+    .register-free-2{
+        width: 100%;
+        background-color: white;
+        padding: 1rem 5rem;
+    }
+    
+    .partners{
+        width: 100%;
+        background-color: var(--general-blue);
+        padding: 1rem 5rem;
+    }
+    
+    footer{
+        width: 100%;
+        background-color: var(--general-brown);
+        padding: 1rem 5rem;
+    }
+
+    
+}
+
+
+@media (max-width:835px){
+    nav{
+        width:100%;
+        background-color: var(--general-blue);
+        padding: 2rem 2rem;
+        display:flex;
+        align-items: center;
+    }
+
+    /*
+    This is avery detailed thing you have to know;
+    *at this with I had to translate this inner-showimg div
+    *to solvea simple bug and retain the 835 breakpoint media query
+    *trust me. this is very much important
+    */
+    .inner-showimg{
+        width:320px;
+        height:320px;
+        transform: rotate(45deg) translateX(-5%);
+    }
+    .showcase{
+        width:100%;
+        display:flex;
+        justify-content: space-evenly;
+        padding: 2rem 2rem;
+        background-color: var(--general-blue);
+    }
+    .showimg::after{
+        content: '';
+        height:100%;
+        width:2rem;
+        position:absolute;
+        right:0;
+        background-color: var(--general-blue);
+        margin-right:-2rem;
+    }
+    .explore-title{
+        width:100%;
+        text-align: center;
+        background-color: var(--general-blue);
+        padding: 3rem 2rem 1rem 2rem;
+        display:flex;
+        flex-wrap:wrap;
+    }
+    .explore-cards{
+        width:100%;
+        background-color: var(--general-blue);
+        padding: 1rem 2rem;
+    }
+    .browse-courses{
+        width: 100%;
+        text-align: center;
+        padding: 0.4rem 2rem 0.6rem 2rem;
+        background-color: var(--general-blue);
+    }
+    
+    .aboutorg{
+        width: 100%;
+        background-color: white;
+        display:flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 4rem 2rem 6rem 2rem;
+    }
+    
+    .our-community{
+        width:100%;
+        padding: 1.2rem 2rem 0.2rem 2rem;
+        background-color: var(--general-blue);
+    }
+    
+    .our-stories{
+        width:100%;
+        padding: 1.2rem 2rem 3rem 2rem;
+        background-color: var(--general-blue);
+    }
+    
+    .be-in-charge{
+        width: 100%;
+        background-color: white;
+        padding: 2rem 2rem;
+    }
+    
+    .register-free-2{
+        width: 100%;
+        background-color: white;
+        padding: 1rem 2rem;
+    }
+    
+    .partners{
+        width: 100%;
+        background-color: var(--general-blue);
+        padding: 1rem 2rem;
+    }
+    
+    footer{
+        width: 100%;
+        background-color: var(--general-brown);
+        padding: 1rem 2rem;
+    }
+
+}
+
+
+@media (max-width:740px){
+    nav{
+        width:100%;
+        background-color: var(--general-blue);
+        padding: 2rem 2rem;
+        display:flex;
+        align-items: center;
+    }
+    .showcase{
+        width:100%;
+        display:flex;
+        justify-content: space-evenly;
+        padding: 2rem 2rem;
+        background-color: var(--general-blue);
+        overflow:visible;
+    }
+    .showimg::after{
+        content: '';
+        height:100%;
+        width:2rem;
+        position:absolute;
+        right:0;
+        background-color: var(--general-blue);
+        margin-right:-2rem;
+    }
+    .explore-title{
+        width:100%;
+        text-align: center;
+        background-color: var(--general-blue);
+        padding: 3rem 2rem 1rem 2rem;
+        display:flex;
+        flex-wrap:wrap;
+    }
+    .explore-cards{
+        width:100%;
+        background-color: var(--general-blue);
+        padding: 1rem 2rem;
+    }
+    .browse-courses{
+        width: 100%;
+        text-align: center;
+        padding: 0.4rem 2rem 0.6rem 2rem;
+        background-color: var(--general-blue);
+    }
+    
+    .aboutorg{
+        width: 100%;
+        background-color: white;
+        display:flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 4rem 2rem 6rem 2rem;
+    }
+    
+    .our-community{
+        width:100%;
+        padding: 1.5rem 2rem 0.5rem 2rem;
+        background-color: var(--general-blue);
+    }
+    
+    .our-stories{
+        width:100%;
+        padding: 1.5rem 2rem 3rem 2rem;
+        background-color: var(--general-blue);
+    }
+    
+    .be-in-charge{
+        width: 100%;
+        background-color: white;
+        padding: 2rem 2rem;
+    }
+    
+    .register-free-2{
+        width: 100%;
+        background-color: white;
+        padding: 1rem 2rem;
+    }
+    
+    .partners{
+        width: 100%;
+        background-color: var(--general-blue);
+        padding: 1rem 2rem;
+    }
+    
+    footer{
+        width: 100%;
+        background-color: var(--general-brown);
+        padding: 1rem 2rem;
+    }
+
+    .showimg{
+        position: relative;
+        width: 60%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .inner-showimg{    
+        display: block;
+        height: 300px;
+        width:300px;
+        border: 1px solid gray;
+        border-radius: 20%;
+        overflow: hidden;
+        transform: rotate(0deg);
+        background: url(https://github.com/moonthegreat969/skillings_responsive-site/blob/gh-pages/digitalskillspic.jpeg?raw=true);
+        background-position: top center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    
+    .inner-showimg::before{
+        display:none;
+    }
+    
+    .show-words{
+        width:50%;
+    }
+
+    .show-words .register-free-btn{
+        width:max-content;
+        border-radius: 7px;
+        background-color: var(--general-brown);
+        color: black;
+        border: 0;
+        font-size: 0.9rem;
+        font-family:sans-serif;
+        font-weight: 600;
+        padding: 0.8rem 0.3rem;
+    }
+
+    .how-it-works{
+        color: var(--general-brown);
+        font-size: 0.9rem;
+        font-family: sans-serif;
+        font-weight: bold;
+        border-bottom: 2px solid white;
+        padding-bottom:8px;
+        margin-left: 1rem;
+    }
+    
+    .what-we-deliver{
+        background-image: url(https://github.com/moonthegreat969/skillings_responsive-site/blob/gh-pages/digitalskillsimage.jpeg?raw=true);
+    }
+    
+    .our-workspace{
+        background-image: url(https://github.com/moonthegreat969/skillings_responsive-site/blob/gh-pages/boyonlapee.jpg?raw=true); 
+    }
+    
+    .our-instructors{
+        background-image: url(https://github.com/moonthegreat969/skillings_responsive-site/blob/gh-pages/teachingill.jpg?raw=true);
+    }
+
+
+    .aboutorg{
+        width: 100%;
+        background-color: white;
+        display:flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 4rem 2rem 2rem 2rem;
+    }
+    
+    .aboutorg-1{
+        width:60%;
+        margin-bottom:4rem;
+    }
+
+    .aboutorg-2{
+        position: relative;
+        width:40%;
+        margin-bottom: 4rem;
+        padding:0;
+        display:flex;
+        justify-content: center;
+    }
+
+    .inner-aboutorg-2{
+        align-self:center;
+        position:relative;
+        height:200px;
+        width:200px;
+        transform: rotateZ(0deg) ;
+        border-radius: 10%;
+        overflow: hidden;
+    }
+
+
+    .inner-aboutorg-2::before{
+        display:none;
+    }
+    .what-we-deliver,.our-workspace,.our-instructors{
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .how-it-works{
+        width:max-content;
+        display:block;
+        border-bottom:2px solid white;
+        padding-top: 1rem;
+    }
+
+
+    .our-stories-content{
+        padding: 1rem 2rem 1rem 2rem;
+    }
+
+    .our-stories{
+        flex-direction: column;
+    }
+    .our-stories-img{
+        width:100%;
+        margin: 1rem 0;
+        display:flex;
+        justify-content: center;    
+        background-image: none;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center center ;
+    }
+    
+    .our-stories-img img{
+        display: block;
+        align-self:center;
+        height:120px;
+        width:120px;
+        border-radius:50%;
+    }
+
+    .our-stories-right{
+        width:100%;
+        border: 1px solid white;
+        padding: 0.8rem 1rem 0.8rem 1rem;
+        color:var(--general-blue);
+    }
+
+    .navleft{
+        display:block;
+    }
+ 
+}
+
+@media (max-width:555px){
+    nav{
+        width:100%;
+        background-color: var(--general-blue);
+        padding: 2rem 2rem;
+        display:flex;
+        align-items: center;
+    }
+    .showcase{
+        width:100%;
+        display:flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        padding: 1rem 2rem 2rem 2rem;
+        background-color: var(--general-blue);
+        overflow:visible;
+    }
+    .showimg::after{
+        content: '';
+        height:100%;
+        width:2rem;
+        position:absolute;
+        right:0;
+        background-color: var(--general-blue);
+        margin-right:-2rem;
+    }
+    .explore-title{
+        width:100%;
+        text-align: center;
+        background-color: var(--general-blue);
+        padding: 0.5rem 2rem 0.5rem 2rem;
+        display:flex;
+        flex-wrap:wrap;
+    }
+    .explore-cards{
+        width:100%;
+        background-color: var(--general-blue);
+        padding: 1rem 2rem;
+    }
+
+    .inner-explore-cards{
+        width: 100%;
+        display:flex;
+        overflow-x:hidden;
+    }
+    
+    .explore-card{
+        width: 200px;
+        height: 140px;
+        border: 1px solid white;
+        border-radius: 8%;
+        display: flex;
+        justify-content: center;
+        align-items:center;
+        margin-right: 2rem;
+        flex-grow:0;
+        flex-shrink: 0;
+    }
+
+    .browse-courses{
+        width: 100%;
+        text-align: center;
+        padding: 0.4rem 2rem 0.6rem 2rem;
+        background-color: var(--general-blue);
+    }
+    
+    .aboutorg{
+        width: 100%;
+        background-color: white;
+        display:flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 4rem 2rem 6rem 2rem;
+    }
+    
+    .our-community{
+        width:100%;
+        padding: 1.5rem 2rem 0.5rem 2rem;
+        background-color: var(--general-blue);
+    }
+    
+    .our-stories{
+        width:100%;
+        padding: 1.5rem 2rem 3rem 2rem;
+        background-color: var(--general-blue);
+    }
+    
+    .be-in-charge{
+        width: 100%;
+        background-color: white;
+        padding: 2rem 2rem;
+    }
+    
+    .register-free-2{
+        width: 100%;
+        background-color: white;
+        padding: 1rem 2rem;
+    }
+    
+    .partners{
+        width: 100%;
+        background-color: var(--general-blue);
+        padding: 1rem 2rem;
+    }
+    
+    footer{
+        width: 100%;
+        background-color: var(--general-brown);
+        padding: 1rem 2rem;
+    }
+
+
+    .showimg{
+        display:none;
+        position: relative;
+        width: 0;
+        height:0;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .inner-showimg{    
+        display: none;
+        height: 300px;
+        width:300px;
+        border: 1px solid gray;
+        border-radius: 20%;
+        overflow: hidden;
+        transform: rotate(0deg);
+        background: url(https://github.com/moonthegreat969/skillings_responsive-site/blob/gh-pages/digitalskillspic.jpeg?raw=true);
+        background-position: top center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    
+    .inner-showimg::before{
+        display:none;
+    }
+    
+    .show-words{
+        width:100%;
+        text-align: center;
+    }
+
+    .show-words h3{
+        color: yellow;
+        font-size: 1.8rem;
+    }
+
+    .show-words .register-free-btn{
+        width:max-content;
+        border-radius: 7px;
+        background-color: var(--general-brown);
+        color: black;
+        border: 0;
+        font-size: 0.9rem;
+        font-family:sans-serif;
+        font-weight: 600;
+        padding: 0.8rem 0.3rem;
+    }
+
+    .how-it-works{
+        width: max-content;
+        display: inline-block;
+        color: var(--general-brown);
+        font-size: 0.9rem;
+        font-family: sans-serif;
+        font-weight: bold;
+        border-bottom: 2px solid white;
+        padding-bottom:8px;
+        margin-left: 0rem;
+    }
+
+
+    
+    .what-we-deliver{
+        background-image: url(https://github.com/moonthegreat969/skillings_responsive-site/blob/gh-pages/digitalskillsimage.jpeg?raw=true);
+    }
+    
+    .our-workspace{
+        background-image: url(https://github.com/moonthegreat969/skillings_responsive-site/blob/gh-pages/boyonlapee.jpg?raw=true); 
+    }
+    
+    .our-instructors{
+        background-image: url(https://github.com/moonthegreat969/skillings_responsive-site/blob/gh-pages/teachingill.jpg?raw=true);
+    }
+
+
+    .aboutorg{
+        width: 100%;
+        background-color: white;
+        display:flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        padding: 3rem 2rem 2rem 2rem;
+    }
+    
+    .aboutorg-1{
+        width:100%;
+        margin-bottom:4rem;
+        text-align: center;
+    }
+
+    .aboutorg-1 p{
+        padding-right: 0;
+    }
+
+    .aboutorg-left{
+        padding-right: 0;
+    }
+
+    .aboutorg-right{
+        padding-left:0;
+    }
+
+    .aboutorg-2{
+        position: relative;
+        width:0;
+        height:0;
+        border: 0;
+        padding:0;
+        display:none;
+        justify-content: center;
+    }
+
+    .inner-aboutorg-2{
+        display:none;
+        align-self:center;
+        position:relative;
+        height:0;
+        width:0;
+        transform: rotateZ(0deg) ;
+        border-radius: 10%;
+        overflow: hidden;
+    }
+
+    .inner-aboutorg-2::before{
+        display:none;
+    }
+
+    .what-we-deliver,.our-workspace,.our-instructors{
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+
+    .our-stories-content{
+        padding: 1rem 2rem 1rem 2rem;
+    }
+
+    .our-stories{
+        flex-direction: column;
+    }
+    .our-stories-img{
+        width:100%;
+        margin: 1rem 0;
+        display:flex;
+        justify-content: center;    
+        background-image: none;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center center ;
+    }
+    
+    .our-stories-img img{
+        display: block;
+        align-self:center;
+        height:120px;
+        width:120px;
+        border-radius:50%;
+    }
+
+    .our-stories-right{
+        width:100%;
+        padding: 0.8rem 1rem 0.8rem 1rem;
+        color:var(--general-blue);
+    }
+
+    .comm-content{
+        flex-wrap:wrap;
+    }
+    .comm-content .comm-content-item{
+        width:50%;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .inner-explore-cards{
+        flex-wrap:wrap;
+        justify-content: space-evenly;
+    }
+
+    .explore-card{
+        margin-bottom: 1rem;
+        margin-right:0;
+    }
+
+    .be-in-charge{
+        padding: 2rem 2rem 1rem 2rem;
+    }
+    .inner-be-in-charge{
+        text-align: center;
+        font-size:90%;
+    }
+    .inner-be-in-charge .logo-in-circle-1{
+        display:none;
+    }
+
+    .inner-be-in-charge ul{
+        padding-left:0;
+        display:flex;
+        flex-direction: column;
+    }
+    
+    .inner-be-in-charge ul li{
+        list-style-type: disc;
+        list-style-position: inside;
+        width: 100%;
+        height: 25%;
+        color: var(--general-brown);
+        font-size: 0.8rem;
+        font-family: verdana;
+        padding: 0.8rem 0;
+    }
+
+    .partners-content{
+        width: 100%;
+        margin: 2rem 0 3rem 0;
+        display:flex;
+        flex-direction: row;
+        flex-wrap:wrap;
+        justify-content: center;
+    }
+       
+    .partners-logo{
+        width: 33%;
+        display:flex;
+        justify-content: center;
+        padding: 1rem 0;
+    }
+    
+    .partners-logo img{
+        width:50px;
+        height: 50px;
+    }
+
+    .footer-first{
+        flex-direction: column;
+    }
+
+    .footer-left{
+        width: 100%;
+    }
+
+    .footer-right{
+        width:100%;
+    }
+
+    .footer-text-links{
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .footer-text-links > div{
+        padding: 0.75rem 0;
+    }
+    
+    .footer-text-links > div span{
+        color: black;
+        font-size: 0.8rem;
+        font-family: sans-serif;
+        font-weight:bold;
+    }
+    
+    .footer-text-links > div:nth-of-type(3n-2),
+    .footer-text-links > div:nth-of-type(3n-1),.footer-text-links > div:nth-of-type(3n){
+        width: 50%;
+    }
+    .footer-text-links-item{
+        width:50%;
+    }
+
+    .footer-img-links{
+        display:flex;
+        justify-content: space-around;
+    }
+
+    .footer-copyright{
+        justify-content: center;
+    }
+
+    .pagechangeicon{
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        background-color: rgb(194, 150, 55);
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.2rem;
+        font-weight: bold;
+        padding: 0.5rem;
+    }
+
+
+    nav{
+        display:flex;
+        flex-direction:row;
+        flex-wrap:Wrap;
+    }
+    .navlogo{
+        width:80%;
+    }
+
+    .navhambg{
+        display:block;
+        width:20%;
+    }
+    
+    .navhambg img{
+        margin-left:auto;
+        height:30px;
+        float:right
+    }
+
+    .navleft{
+        width: 100%;
+        float:right;
+        margin-left:0;
+        display:flex;
+        flex-direction:row;
+        flex-wrap:wrap;
+        display:none;
+    }
+    
+    .sign-in{
+        width: 100%;
+        color:white;
+        font-family: verdana;
+        font-size: 1.1rem;
+        padding-top: 1rem;
+    }
+    
+    .register-free{
+        width: 100%;
+        color: yellow;
+        font-family: verdana;
+        font-size: 1.1rem;
+        margin-left: 0rem;
+        padding-top:1rem;
+    }
+    .register-free:hover{
+        border-bottom:0;
+        padding-bottom:0;
+    }
+}
+
+@media (max-width:405px){
+    .footer-text-links > div:nth-of-type(3n-2),
+    .footer-text-links > div:nth-of-type(3n-1),.footer-text-links > div:nth-of-type(3n){
+        width: 100%;
+    }
+}
+
+@media (max-width:365px){
+    .partners-logo img{
+        width:40px;
+        height: 40px;
+    }
+
+    .our-stories-content{
+        padding: 1rem 1rem 1rem 1rem;
+    }
+
+    .our-stories-right{
+        width:100%;
+        padding: 0.8rem 0.4rem 0.8rem 0.4rem;
+        color:var(--general-blue);
+    }
+
+    .page-change-roll{
+        height:5px;
+        width:5px;
+    }
+}
+
+@media (max-width:265px){
+    .explore-card{
+        width:160px;
+        height:120px;
+    }
+    .partners-logo{
+        width:50%;
+        justify-content: space-around;
+    }
+}
+
+
+
+@media (max-width:215px){
+    :root{
+        font-size: 0.75em;
+    }
+
+    .comm-content .comm-content-item{
+        width:100%;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-copyright span{
+        justify-content: flex-start;
+    }
+
+    .show-words .register-free-btn{
+        width:80%;
+        padding: 0.8rem 0.1rem;
+    }
+
+    .navlogo img{
+        height: 25px;
+        width:25px;
+    }
+
+}    
+
