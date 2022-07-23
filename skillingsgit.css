@@ -1364,6 +1364,10 @@ footer{
 }
 
 @media (max-width:555px){
+
+    :root{
+        font-size:20px
+}
     nav{
         width:100%;
         background-color: var(--general-blue);
